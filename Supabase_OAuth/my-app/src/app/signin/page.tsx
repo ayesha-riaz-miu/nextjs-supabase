@@ -28,7 +28,7 @@ export default function page() {
   return (
     <div style={{textAlign: "center",marginTop: "100px",fontFamily: "Arial, sans-serif",}}> 
 
-    <h1  style={{fontSize: "2rem",marginBottom: "40px",color: "#333",}}>Sign In</h1>
+    <h1  style={{fontSize: "2rem",marginBottom: "40px",color: "#333",}}>Sign in</h1>
         
     <input placeholder='E-mail' onChange={e=>setemail(e.target.value)} style={{display: "block",margin: "10px auto",padding: "10px",width: "280px",
         borderRadius: "5px",border: "1px solid #ccc",fontSize: "1rem",}}/>
