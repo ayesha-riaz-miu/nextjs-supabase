@@ -1,0 +1,43 @@
+.home-container {
+    text-align: center;
+    margin-top: 100px;
+    font-family: Arial, sans-serif;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 50px;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .btn {
+    padding: 15px 30px;
+    font-size: 1rem;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .signup {
+    background-color: #4caf50;
+  }
+  
+  .signup:hover {
+    background-color: #45a049;
+  }
+  
+  .signin {
+    background-color: #008cba;
+  }
+  
+  .signin:hover {
+    background-color: #007bb5;
+  }
+  
