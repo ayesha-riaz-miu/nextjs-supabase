@@ -14,6 +14,7 @@ type details={
 export default function page() {
   const [id,setid] = useState<number[]>([])
   const [storydetials,setstorydetials] = useState<details[]>([])
+  const [infinitescroll,setinfinitescroll] = useState<number>(10)
 
   useEffect(()=>{
     const fetch_data = async()=>
@@ -34,21 +35,24 @@ export default function page() {
         })
       )
 
-       const get_aistories = storyDetails.filter((item)=>item.title.toLowerCase().includes('ai'))
-    //   const get_aistories = storyDetails.filter((item) =>
-    //   ['ai', 'artificial intelligence', 'machine learning', 'deep learning', 'chatgpt', 'openai']
-    //     .some(keyword => item.title?.toLowerCase().includes(keyword))
-    // );
-   
-    
-      
-      setstorydetials(get_aistories)
+        const get_aistories = storyDetails.filter((item)=>item.title.toLowerCase().includes('ai'))
+          setstorydetials(get_aistories)
     }
    
     fetch_data()
-   
 
   },[])
+
+  useEffect(()=>{
+    const handle_scrole=()=>{
+      if(window.innerHeight + window.scrollY >= document.body.offsetHeight-200){
+        setinfinitescroll(old=>old+10)
+      }
+    }
+    window.addEventListener('scroll',handle_scrole)
+    return()=>window.removeEventListener('scroll',handle_scrole)
+
+   },[])
   return (
     <div style={{
       textAlign: "center",
@@ -70,7 +74,7 @@ export default function page() {
         alignItems: "center",
         gap: "20px"
       }}>
-        {storydetials.map((story) => (
+        {storydetials.slice(0,infinitescroll).map((story) => (
           <div key={story.id} style={{
             width: "100%",
             maxWidth: "600px",

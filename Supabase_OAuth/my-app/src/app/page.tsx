@@ -23,10 +23,9 @@ export default function Home() {
       }}
     >
       <h1 style={{ fontSize: "2rem", marginBottom: "50px" }}>
-        Welcome To Next.js App
+                   AI News Hub
       </h1>
       <div>
-        {/* <img src={"./images/photo.jpg"}/> */}
         <Image src={"/images/photo.jpg"} alt="My App Photo"  width={200} height={200} 
          style={{ borderRadius: "10px", marginTop: "20px" }}/>
       </div>
